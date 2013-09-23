@@ -1,0 +1,54 @@
+.card {
+	perspective: 1000;
+	-webkit-perspective: 1000;
+    -moz-perspective: 1000;   
+}
+
+.card:hover .card-container {
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+}
+
+.card, .front, .back {
+	width: 500px;
+	height: 680px;
+}
+
+.card-container {
+	transition: 0.4s;
+	transform-style: preserve-3d;
+
+	-webkit-transition: 0.4s;
+    -webkit-transform-style: preserve-3d;
+
+    -moz-transition: 0.4s;
+    -moz-transform-style: preserve-3d;
+
+	position: relative;
+}
+
+.front, .back {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front {
+	background-color: #660000;
+	z-index: 2;
+	/** declare this as the front **/
+	-webkit-transform:rotateY(0deg);
+}
+
+.back {
+	background-color: #CCCC66;
+	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg); 
+}
